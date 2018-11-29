@@ -335,6 +335,9 @@ function insert_registration($server, $r) {
             'certificate'=>$r['coupon_number'],
             'is_paid'=>$r['is_paid'],
             'price'=>$r['ticket_price'],
+            'ticket_price'=>$r['ticket_price'],
+            'coupon_type'=>$r['catalog_ticket']['coupon_type'],
+            'ticket_type'=>$r['catalog_ticket']['ticket_type'],
             'visitors_qty'=>'1'),
         ));
         $external_ids = $models->execute_kw($server['db'], $uid, $server['password'],
