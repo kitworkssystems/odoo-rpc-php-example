@@ -9,7 +9,7 @@ function insert_registration($server, $r) {
     var_dump($uid);
 
     // отримання ID замовника -- початок
-    echo("partner_id start \n");
+
     $models = ripcord::client($server['url'].'object');
     // пошук замовника за параметрами можливо id, name, email, phone тощо
     // $partner = $models->execute_kw($server['db'], $uid, $server['password'],
@@ -46,7 +46,10 @@ function insert_registration($server, $r) {
                 'res.partner', 'create', array(array(
                     'name'=>$r['customer']['name'], 
                     'email'=>$r['customer']['email'],
-                    'phone'=>$r['customer']['phone']),
+                    'phone'=>$r['customer']['phone'],
+                    'phone'=>$r['customer']['jaunt_passport_number'],
+                    'phone'=>$r['customer']['jaunt_citizenship'],
+                    'phone'=>$r['customer']['jaunt_date_of_birth']),
                 ));
             }
         // збережемо ID для наступних поколінь
@@ -326,7 +329,7 @@ function insert_registration($server, $r) {
             $catalog_ticket_id = false;
         }
                 
-
+        echo("registration_id create \n");
         $registration_id = $models->execute_kw($server['db'], $uid, $server['password'],
         'jaunt.registration', 'create', array(array(
             'jaunt_id'=>$jaunt_id, 
@@ -347,6 +350,7 @@ function insert_registration($server, $r) {
             'res_id'=>$registration_id),
         ));
     }
+    echo("registration_id: \n");
     var_dump($registration_id);
     // отримання ID реєстраціі на тур у розкладі  -- завершення
 }

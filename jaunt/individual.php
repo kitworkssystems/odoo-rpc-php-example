@@ -191,7 +191,8 @@ function insert_order($server, $r) {
                 'organizer_id'=>$partner_id,
                 'price'=>$r['price'],
                 'language_id'=>$lang_id,
-                'comment'=>$comment
+                'comment'=>$comment,
+                'number_of_participants'=>$r['jaunt']['number_of_participants']
             ),
             ));
         } 
