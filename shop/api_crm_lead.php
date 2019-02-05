@@ -131,7 +131,7 @@ $opportunity = array(
     ),
     'date_deadline'=>"2018-11-29 17:00:00",
     'utm_source'=>'news',
-    'utm_medeium'=>'email',
+    'utm_medium'=>'email',
     'utm_campaign'=>'sping',
 
 );
